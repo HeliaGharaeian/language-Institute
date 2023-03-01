@@ -1,0 +1,36 @@
+﻿@page
+@model languageInstituteProject.Pages.StudentCRUD.GetStudentsModel
+@{
+}
+
+
+<h1>Student List</h1>
+
+<form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Gender</th>
+                <th>Class Number</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        @foreach (var item in Model.Students)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.PhoneNumber</td>
+                <td>@item.Gender</td>
+                <td>@item.Class</td>
+            </tr>
+        }
+        </tbody>
+
+    </table>
+
+</form>
