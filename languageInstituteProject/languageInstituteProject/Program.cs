@@ -1,4 +1,5 @@
 using languageInstituteProject.Data;
+using languageInstituteProject.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<DatabaseContext>(options =>
    options.UseSqlServer(builder.Configuration.GetConnectionString("MyDatabaseConnection")));
+
+builder.Services.AddScoped<IStudentService, StudentService>();
 var app = builder.Build();
 
 

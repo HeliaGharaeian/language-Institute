@@ -45,40 +45,57 @@ namespace languageInstituteProject.Services
         }
 
 
-        public Student Edit(StudentDto student)
+        public StudentDto Edit(StudentDto student)
         {
             var entity = _context.students.Find(student.Id);
-            entity
+            entity.Class = student.Class;
+            entity.Gender = student.Gender;
+            entity.Name = student.Name;
+            entity.PhoneNumber = student.PhoneNumber;
+            entity.Email = student.Email;
+            _context.SaveChanges();
+            return student;
+            
         }
-
-        public Student Find(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Student> List()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Student> Search(string Name)
-        {
-            throw new NotImplementedException();
-        }
-
         StudentDto IStudentService.Find(int Id)
         {
-            throw new NotImplementedException();
+            var student = _context.students.Find(Id);
+            return new StudentDto
+            {
+                Class = student.Class,
+                Gender = student.Gender,
+                Name = student.Name,
+                PhoneNumber = student.PhoneNumber,
+                Email = student.Email
+            };
         }
 
         List<StudentDto> IStudentService.List()
         {
-            throw new NotImplementedException();
+            var students = _context.students.OrderByDescending(p => p.Id).Select(p => new StudentDto
+            {
+                Id = p.Id,
+                Name = p.Name,
+                PhoneNumber = p.PhoneNumber,
+                Email = p.Email,
+                Gender= p.Gender
+            }).ToList();
+            return students;
         }
 
         List<StudentDto> IStudentService.Search(string Name)
         {
-            throw new NotImplementedException();
+            var students = _context.students.Where(p => p.Name.Contains(Name)).OrderByDescending(p => p.Id).Select(p => new StudentDto
+            {
+                Id = p.Id,
+                Name = p.Name,
+                PhoneNumber = p.PhoneNumber,
+                Email = p.Email,
+                Gender = p.Gender
+            }).ToList();
+            return students;
+
+
         }
     }
 

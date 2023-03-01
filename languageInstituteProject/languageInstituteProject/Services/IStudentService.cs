@@ -8,7 +8,7 @@ namespace languageInstituteProject.Services
         int Delete(int Id);
         StudentDto Find(int Id);
         List<StudentDto> List();
-        Student Edit(StudentDto student);
+        StudentDto Edit(StudentDto student);
         List<StudentDto> Search(string Name);
     }
 }
