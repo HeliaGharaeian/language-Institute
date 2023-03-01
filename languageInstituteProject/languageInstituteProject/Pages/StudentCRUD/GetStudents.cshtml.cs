@@ -1,5 +1,6 @@
 using languageInstituteProject.Data;
 using languageInstituteProject.Models;
+using languageInstituteProject.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -7,15 +8,23 @@ namespace languageInstituteProject.Pages.StudentCRUD
 {
     public class GetStudentsModel : PageModel
     {
-        public  List<Student> Students { get; set; } = new List<Student>();
+        public  List<StudentDto> Students { get; set; } = new List<StudentDto>();
+
+        private readonly IStudentService _studentService;
+        public GetStudentsModel(IStudentService studentService)
+        {
+            _studentService= studentService;
+        }
+
 
         public GetStudentsModel()
         {
+
         }
 
         public void OnGet()
         {
-
+            Students = _studentService.List();
         }
     }
 }

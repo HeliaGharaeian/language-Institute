@@ -26,7 +26,14 @@
                 <td>@item.Email</td>
                 <td>@item.PhoneNumber</td>
                 <td>@item.Gender</td>
-                <td>@item.Class</td>
+                <td>
+                        <select name="optionSelected" id="portfolio" onchange="la(this.value)">
+                            <option selected disabled>Select your class</option>
+                            <option value="">123</option>
+                            <option value="">456</option>
+                            <option value="">789</option>
+                        </select>
+                </td>
             </tr>
         }
         </tbody>
