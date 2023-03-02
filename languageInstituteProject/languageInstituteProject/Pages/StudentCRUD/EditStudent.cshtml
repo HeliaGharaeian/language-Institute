@@ -1,0 +1,41 @@
+﻿@page
+@model languageInstituteProject.Pages.StudentCRUD.EditStudentModel
+@{
+}
+
+
+<h1>Edit Student</h1>
+
+<div class="row">
+    <form method="post">
+
+        <input type="hidden" asp-for="Students.Id" />
+        <div class="form-group">
+            <label asp-for="Students.Name"></label>
+            <input asp-for="Students.Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Students.Email"></label>
+            <input asp-for="Students.Email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Students.PhoneNumber"></label>
+            <input asp-for="Students.PhoneNumber" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Students.Gender"></label>
+            <input asp-for="Students.Gender" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Students.ClassId">Class Number</label>
+            <select size="" asp-for="Students.ClassId" asp-items="Model.Options"></select>
+        </div>
+        <br />
+        <div class="form-group">
+            <input type="submit" value="Edit" class="btn btn-warning" />
+            <a href="GetStudents" class="btn btn-outline-primary" role="button" aria-disabled="true">Back to list</a>
+
+        </div>
+
+    </form>
+</div>

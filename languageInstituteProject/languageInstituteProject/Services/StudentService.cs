@@ -13,17 +13,7 @@ namespace languageInstituteProject.Services
 
         public int Add(StudentDto student)
         {
-            //Models.Student entity = new Models.Student
-            //{
-            //    Email = student.Email,
-            //    Gender = student.Gender,
-            //    Name = student.Name,
-            //    PhoneNumber = student.PhoneNumber,
-            //    Classes = new List<Class>
-            //    {
-            //        new Class{ClassNumber = 1235 , Teacher = new Teacher{ Email = "",Name="",PhoneNumber=""} }
-            //    }
-            //};
+
 
             Models.Student entity = new Models.Student
             {
@@ -42,7 +32,10 @@ namespace languageInstituteProject.Services
 
         public int Delete(int Id)
         {
-            _context.students.Remove(new Models.Student { Id = Id });
+            _context.students.Remove(new Models.Student 
+            { 
+                Id = Id
+            });
             return _context.SaveChanges();
         }
 
@@ -68,7 +61,8 @@ namespace languageInstituteProject.Services
                 Gender = student.Gender,
                 Name = student.Name,
                 PhoneNumber = student.PhoneNumber,
-                Email = student.Email
+                Email = student.Email,
+                Id = student.Id
             };
         }
 
@@ -80,14 +74,18 @@ namespace languageInstituteProject.Services
                 Name = p.Name,
                 PhoneNumber = p.PhoneNumber,
                 Email = p.Email,
-                Gender = p.Gender
+                Gender = p.Gender,
+                ClassId = p.ClassId
+                
             }).ToList();
             return students;
         }
 
         List<StudentDto> IStudentService.Search(string Name)
         {
-            var students = _context.students.Where(p => p.Name.Contains(Name)).OrderByDescending(p => p.Id).Select(p => new StudentDto
+            var students = _context.students.Where(p => p.Name.Contains(Name))
+                .OrderByDescending(p => p.Id)
+                .Select(p => new StudentDto
             {
                 Id = p.Id,
                 Name = p.Name,
@@ -99,3 +97,4 @@ namespace languageInstituteProject.Services
         }
     }
 }
+

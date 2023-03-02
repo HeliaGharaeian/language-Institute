@@ -2,30 +2,36 @@
 @model languageInstituteProject.Pages.StudentCRUD.CreateStudentModel
 @{
 }
-<script src="~/lib/jquery/dist/jquery.js"></script>
-<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
-<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+<div class="container">
+
+    <form asp-page="CreateStudent" method="post">
+
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="Students.Name">Name</label>
+                <input asp-for="Students.Name" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Students.Name"></span>
+                <label asp-for="Students.PhoneNumber">Phone Number</label>
+                <input asp-for="Students.PhoneNumber" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Students.PhoneNumber"></span>
+                <label asp-for="Students.Email">Email</label>
+                <input asp-for="Students.Email" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Students.Email"></span>
+                <label asp-for="Students.Gender">Gender</label>
+                <input asp-for="Students.Gender" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Students.Gender"></span>
+                <label asp-for="Students.ClassId">Class Number</label>
+                <select size="" asp-for="Students.ClassId" asp-items="Model.Options"></select>
+                <span class="alert-danger" asp-validation-for="Students.ClassId"></span>
+            </div>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-success">Save</button>
+        
+        <a href="GetStudents" class="btn btn-outline-primary" role="button" aria-disabled="true">Back to list</a>
+
+    </form>
 
 
-<form method="post">
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone Number</th>
-                <th>Gender</th>
-                <th>Class Number</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr>
-
-            </tr>
-        </tbody>
-
-    </table>
-
-</form>
+</div>

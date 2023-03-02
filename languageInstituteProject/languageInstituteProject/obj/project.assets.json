@@ -2008,19 +2008,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\he.gharaeian\\.nuget\\packages\\": {}
+    "C:\\Users\\ghara\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\unittestProject\\languageInstituteProject\\languageInstituteProject\\languageInstituteProject.csproj",
+      "projectUniqueName": "C:\\Users\\ghara\\OneDrive\\دسکتاپ\\language-Institute\\languageInstituteProject\\languageInstituteProject\\languageInstituteProject.csproj",
       "projectName": "languageInstituteProject",
-      "projectPath": "E:\\unittestProject\\languageInstituteProject\\languageInstituteProject\\languageInstituteProject.csproj",
-      "packagesPath": "C:\\Users\\he.gharaeian\\.nuget\\packages\\",
-      "outputPath": "E:\\unittestProject\\languageInstituteProject\\languageInstituteProject\\obj\\",
+      "projectPath": "C:\\Users\\ghara\\OneDrive\\دسکتاپ\\language-Institute\\languageInstituteProject\\languageInstituteProject\\languageInstituteProject.csproj",
+      "packagesPath": "C:\\Users\\ghara\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ghara\\OneDrive\\دسکتاپ\\language-Institute\\languageInstituteProject\\languageInstituteProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\he.gharaeian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ghara\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2072,24 +2072,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.13, 6.0.13]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -2098,7 +2080,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

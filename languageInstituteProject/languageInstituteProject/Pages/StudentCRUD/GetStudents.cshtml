@@ -6,7 +6,10 @@
 
 <h1>Student List</h1>
 
-<form>
+
+
+
+    <a href="CreateStudent" class="btn btn-success " role="button" aria-disabled="true">Create</a>
     <table class="table">
         <thead>
             <tr>
@@ -15,6 +18,7 @@
                 <th>Phone Number</th>
                 <th>Gender</th>
                 <th>Class Number</th>
+                <th>Delete|Edit </th>
             </tr>
         </thead>
 
@@ -26,13 +30,10 @@
                 <td>@item.Email</td>
                 <td>@item.PhoneNumber</td>
                 <td>@item.Gender</td>
+                <td>@item.ClassId</td>
                 <td>
-                        <select name="optionSelected" id="portfolio" onchange="la(this.value)">
-                            <option selected disabled>Select your class</option>
-                            <option value="">123</option>
-                            <option value="">456</option>
-                            <option value="">789</option>
-                        </select>
+                        <a asp-page="./DeleteStudent" onclick="return confirm('Are you sure you want to ');" asp-route-id="@item.Id">Delete</a> |
+                        <a asp-page="./EditStudent" asp-page-handler="EditStudent" asp-route-id="@item.Id">Edit</a>
                 </td>
             </tr>
         }
@@ -40,4 +41,3 @@
 
     </table>
 
-</form>

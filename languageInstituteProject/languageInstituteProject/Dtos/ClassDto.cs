@@ -1,6 +1,8 @@
-﻿namespace languageInstituteProject.Models
+﻿using languageInstituteProject.Models;
+
+namespace languageInstituteProject.Dtos
 {
-    public class Class
+    public class ClassDto
     {
         public int Id { get; set; }
         public Teacher Teacher { get; set; }
