@@ -1,0 +1,31 @@
+﻿@page
+@model languageInstituteProject.Pages.TeacherCRUD.DeleteTeacherModel
+@{
+}
+
+<h1>Delete Teacher </h1>
+
+
+@if (ViewData["message"] != null)
+{
+    <div class="alert alert-info">
+        <strong>@ViewData["message"]</strong>
+    </div>
+}
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-md-2">
+            <label asp-for="Teachers.Name"></label>
+        </dt>
+        <dd class="col-md-8">
+            <label>@Model.Teachers.Name</label>
+        </dd>
+    </dl>
+    <form method="post" asp-page="DeleteTeacher">
+        <input type="hidden" asp-for="Teachers.Id" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        |
+        <a href="GetTeachers" class="btn btn-outline-primary" role="button" aria-disabled="true">Back to list</a>
+    </form>
+</div>

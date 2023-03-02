@@ -1,4 +1,5 @@
 using languageInstituteProject.Data;
+using languageInstituteProject.Models;
 using languageInstituteProject.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +11,9 @@ builder.Services.AddDbContext<DatabaseContext>(options =>
    options.UseSqlServer(builder.Configuration.GetConnectionString("MyDatabaseConnection")));
 
 builder.Services.AddScoped<IStudentService, StudentService>();
+builder.Services.AddScoped<ITeacherService, TeacherService>();
+
+
 var app = builder.Build();
 
 

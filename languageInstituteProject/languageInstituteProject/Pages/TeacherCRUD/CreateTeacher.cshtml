@@ -1,0 +1,35 @@
+﻿@page
+@model languageInstituteProject.Pages.TeacherCRUD.CreateTeacherModel
+@{
+}
+
+
+<div class="container">
+
+    <form asp-page="CreateTeacher" method="post">
+
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="Teachers.Name">Name</label>
+                <input asp-for="Teachers.Name" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Teachers.Name"></span>
+                <label asp-for="Teachers.PhoneNumber">Phone Number</label>
+                <input asp-for="Teachers.PhoneNumber" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Teachers.PhoneNumber"></span>
+                <label asp-for="Teachers.Email">Email</label>
+                <input asp-for="Teachers.Email" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Teachers.Email"></span>
+                <label asp-for="Teachers.classes">Class Number</label>
+                <select asp-for="Teachers.classes" asp-items="Model.Options"></select>
+                <span class="alert-danger" asp-validation-for="Teachers.classes"></span>
+            </div>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-success">Save</button>
+
+        <a href="GetTeachers" class="btn btn-outline-primary" role="button" aria-disabled="true">Back to list</a>
+
+    </form>
+
+
+</div>
